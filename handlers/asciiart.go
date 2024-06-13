@@ -6,12 +6,13 @@ import (
 	"html/template"
 	"net/http"
 	"strings"
+
 	"ascii-art/asciiart"
 )
 
 func AsciiArtHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		http.Error(w, "error 405: Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
 
@@ -19,6 +20,10 @@ func AsciiArtHandler(w http.ResponseWriter, r *http.Request) {
 	banner := r.FormValue("banner")
 	fmt.Printf("%q\n", text)
 	asciiChars, err := asciiart.LoadAsciiChars(banner + ".txt")
+	if len(text) == 0 {
+		fmt.Fprintf(w, "error 400: Bad Request")
+		return
+	}
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
