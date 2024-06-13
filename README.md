@@ -1,6 +1,6 @@
 # ASCII Art Output
 
-## Project Overview
+## Project Description
 
 ASCII Art Web is a web based tool developed in Go and HTML that converts text input into ASCII art using predefined character sets and displays it on the browser. This tool also allows users choose from multiple ASCII art styles to enhance the visual representation of their text.
 
@@ -17,7 +17,7 @@ The primary objective of this project is to provide a flexible and user-friendly
   <summary style="font-weight: bold; font-size: 1.4em;" >Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#implementation-details">Implementation details</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -34,13 +34,13 @@ The primary objective of this project is to provide a flexible and user-friendly
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#authors">Authors</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
-## About The Project
+## Implementation details
 
 ASCII Art Web is designed to provide users with a simple yet powerful tool for creating ASCII art from text input. It utilizes a set of ASCII characters to represent text in a visually appealing manner. The project consists of three main components:
 
@@ -171,10 +171,7 @@ Contributions to ASCII Art Output are welcome! If you'd like to contribute, plea
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contact
-
-If you have any questions or suggestions regarding ASCII Art Output, feel free to reach out to the project maintainers:
-
+## Authors
 
 - **[X - @vinomondi_1](https://x.com/vinomondi_1)**
 - **[X - @oumaphilip01](https://x.com/oumaphilip01)**
