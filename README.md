@@ -1,15 +1,14 @@
 # ASCII Art Output
 
-## Project Overview
+## Project Description
 
-ASCII Art Output is a command-line tool developed in Go that converts text input into ASCII art using predefined character sets. This tool allows users to specify an output file and choose from multiple ASCII art styles to enhance the visual representation of their text.
+ASCII Art Web is a web based tool developed in Go and HTML that converts text input into ASCII art using predefined character sets and displays it on the browser. This tool also allows users choose from multiple ASCII art styles to enhance the visual representation of their text.
 
 ### Objectives
 
 The primary objective of this project is to provide a flexible and user-friendly tool for generating ASCII art from text input. It offers the following features:
 
 - Conversion of text input into ASCII art using customizable character sets.
-- Support for specifying an output file for the ASCII art.
 - Multiple ASCII art styles to choose from, including standard, shadow, and thinkertoy.
 
 
@@ -18,7 +17,7 @@ The primary objective of this project is to provide a flexible and user-friendly
   <summary style="font-weight: bold; font-size: 1.4em;" >Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#implementation-details">Implementation details</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -35,27 +34,30 @@ The primary objective of this project is to provide a flexible and user-friendly
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#authors">Authors</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 
-## About The Project
+## Implementation details
 
-ASCII Art Output is designed to provide users with a simple yet powerful tool for creating ASCII art from text input. It utilizes a set of ASCII characters to represent text in a visually appealing manner. The project consists of three main components:
+ASCII Art Web is designed to provide users with a simple yet powerful tool for creating ASCII art from text input. It utilizes a set of ASCII characters to represent text in a visually appealing manner. The project consists of three main components:
 
-- **main.go**: The entry point of the program, responsible for parsing command-line arguments, loading ASCII characters, and generating ASCII art.
+- **main.go**: The entry point of the program, responsible for creating local server on port 8080 and routing URL paths.
 - **loadascii.go**: A package that handles the loading of ASCII characters from file.
 - **printascii.go**: A package that prints the ASCII art to the specified output file.
+- **asciiart.go**: A package that handles form action, loading ascii characters and generating ascii art
+- **index.go**: A package that handles the landing page of the web tool
 
 ### Built With
 
 - Go Programming Language
+- HTML
 
 ## Getting Started
 
-To get started with ASCII Art Output, follow the instructions below.
+To get started with ASCII Art Web, follow the instructions below.
 
 ### Prerequisites
 
@@ -69,28 +71,28 @@ Before running the program, ensure that you have the following prerequisites:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/Vincent-Omondi/ascii-art-output.git
+    git clone https://github.com/Vincent-Omondi/ascii-art-web.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd ascii-art-output
+    cd ascii-art-web
     ```
 
 ## Usage
 
-To use ASCII Art Output, follow these steps:
+To use ASCII Art Web, follow these steps:
 
 1. Prepare a text file containing the text you want to convert into ASCII art.
 
 2. Run the program with the following command:
 
     ```sh
-    go run . --output=<outputFileName.txt> <textToConvert>
+    go run . 
     ```
-
-    Replace `<outputFileName.txt>` with the desired name for the output file, and `<textToConvert>` with the text you want to convert into ASCII art.
+3. Open your browser and on a new tab, go to ```localhost:8080 ```
+4. Input your text, choose your preferred style of display(banner) and then submit by pressing the generate ascii art button
 
 ## Optional ASCII Art Styles
 
@@ -100,91 +102,60 @@ ASCII Art Output supports multiple ASCII art styles, including:
 - **Shadow**: ASCII art with shadow effects.
 - **Thinkertoy**: ASCII art with a playful design.
 
-To specify a different ASCII art style, use the following command format:
-
-```sh
-go run . --output=<outputFileName.txt> <textToConvert> <style>
-```
-
-Replace `<style>` with one of the following options: `standard`, `shadow`, or `thinkertoy`.
-
 ## Expected Output
 
 Instance 1. shadow 
 ```
-student$ go run . --output test00.txt "First\nTest" shadow
-```
-
-```
-
-student$ cat -e test00.txt
-                                       $
-_|_|_|_| _|                     _|     $
-_|          _|  _|_|   _|_|_| _|_|_|_| $
-_|_|_|   _| _|_|     _|_|       _|     $
-_|       _| _|           _|_|   _|     $
-_|       _| _|       _|_|_|       _|_| $
-                                       $
-                                       $
-                                      $
-_|_|_|_|_|                     _|     $
-    _|       _|_|     _|_|_| _|_|_|_| $
-    _|     _|_|_|_| _|_|       _|     $
-    _|     _|           _|_|   _|     $
-    _|       _|_|_| _|_|_|       _|_| $
-                                      $
-                                      $
-student$
-```
+                                       
+_|_|_|_| _|                     _|     
+_|          _|  _|_|   _|_|_| _|_|_|_| 
+_|_|_|   _| _|_|     _|_|       _|     
+_|       _| _|           _|_|   _|     
+_|       _| _|       _|_|_|       _|_| 
+                                       
+                                       
+                                      
+_|_|_|_|_|                     _|     
+    _|       _|_|     _|_|_| _|_|_|_| 
+    _|     _|_|_|_| _|_|       _|     
+    _|     _|           _|_|   _|     
+    _|       _|_|_| _|_|_|       _|_| 
+                                      
+```                                   
 
 Instance 2. thinktertoy
-
-```
-student$ go run . --output=test05.txt "123 -> \"#$%@" thinkertoy
 ```
 
-```
-student$ cat -e test05.txt
-                                    o o         | |               $
-  0    --  o-o            o         | |  | |   -O-O-      O   o   $
- /|   o  o    |            \            -O-O- o | |   o  /   / \  $
-o |     /   oo              O            | |   -O-O-    /   o O-o $
-  |    /      |       o-o  /            -O-O-   | | o  /  o  \    $
-o-o-o o--o o-o            o              | |   -O-O-  O       o-  $
-                                                | |               $
-                                                                  $
-student$
+                                    o o         | |               
+  0    --  o-o            o         | |  | |   -O-O-      O   o   
+ /|   o  o    |            \            -O-O- o | |   o  /   / \  
+o |     /   oo              O            | |   -O-O-    /   o O-o 
+  |    /      |       o-o  /            -O-O-   | | o  /  o  \    
+o-o-o o--o o-o            o              | |   -O-O-  O       o-  
+                                                | |               
+                                                                
 
 ```
 
 Instance 3. standard
 
 ```
-student$ go run . --output=test02.txt "123 -> #$%" standard
-```
-
-```
-student$ cat -e test02.txt
-                                   __             _  _      _     _   __ $
- _   ____    _____                 \ \          _| || |_   | |   (_) / / $
-/ | |___ \  |___ /         ______   \ \        |_  __  _| / __)     / /  $
-| |   __) |   |_ \        |______|   > >        _| || |_  \__ \    / /   $
-| |  / __/   ___) |                 / /        |_  __  _| (   /   / / _  $
-|_| |_____| |____/                 /_/           |_||_|    |_|   /_/ (_) $
-                                                                         $
-                                                                         $
-student$
+                                   __             _  _      _     _   __ 
+ _   ____    _____                 \ \          _| || |_   | |   (_) / / 
+/ | |___ \  |___ /         ______   \ \        |_  __  _| / __)     / /  
+| |   __) |   |_ \        |______|   > >        _| || |_  \__ \    / /   
+| |  / __/   ___) |                 / /        |_  __  _| (   /   / / _  
+|_| |_____| |____/                 /_/           |_||_|    |_|   /_/ (_) 
+                                                                         
+                                                                        
 
 ```
 ## Roadmap
 
 The following features are planned for future releases:
-
-- Support for additional ASCII art styles.
 - Add support for color.
 - Add feature to specify text alignment
 - Integration with third-party ASCII art libraries.
-- Development of a graphical user interface (GUI) for easier usage.
 
 ## Contributing
 
@@ -200,17 +171,14 @@ Contributions to ASCII Art Output are welcome! If you'd like to contribute, plea
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contact
-
-If you have any questions or suggestions regarding ASCII Art Output, feel free to reach out to the project maintainers:
-
+## Authors
 
 - **[X - @vinomondi_1](https://x.com/vinomondi_1)**
-- **[X - @oathooh](https://x.com/oathooh)**
+- **[X - @oumaphilip01](https://x.com/oumaphilip01)**
 - **[Github - Vincent](https://github.com/Vincent-Omondi/)**
-- **[Github - Seth](https://github.com/Athooh)**
+- **[Github - Philip38](https://github.com/Philip38-hub)**
 
-<p align="right">(<a href="#ascii-art-output">back to top</a>)</p>
+<p align="right">(<a href="#ascii-art-web">back to top</a>)</p>
 
 
 ## Acknowledgments
