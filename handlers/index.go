@@ -13,6 +13,7 @@ type AsciiData struct {
 }
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
+	// Render the landing page
 	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -25,3 +26,5 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
+
+

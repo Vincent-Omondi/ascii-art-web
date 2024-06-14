@@ -9,15 +9,25 @@ import (
 )
 
 func main() {
-	// fs := http.FileServer(http.Dir("static"))
-	// http.Handle("/static/", http.StripPrefix("/static/", fs))
+	// Use the handler function for routing
+	http.HandleFunc("/", handler)
 
-	http.HandleFunc("/", handlers.IndexHandler)
-	http.HandleFunc("/ascii-art", handlers.AsciiArtHandler)
+	log.Println("Server started on http://localhost:8080")
 
-	log.Println("Server started on :8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal(err)
+	}
+}
+
+// handler function for routing HTTP requests
+func handler(w http.ResponseWriter, r *http.Request) {
+	switch r.URL.Path {
+	case "/":
+		handlers.IndexHandler(w, r)
+	case "/ascii-art":
+		handlers.AsciiArtHandler(w, r)
+	default:
+		http.NotFound(w, r)
 	}
 }
