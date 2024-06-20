@@ -1,4 +1,4 @@
-# ASCII Art Output
+# ASCII Art Web
 
 ## Project Description
 
@@ -84,15 +84,13 @@ Before running the program, ensure that you have the following prerequisites:
 
 To use ASCII Art Web, follow these steps:
 
-1. Prepare a text file containing the text you want to convert into ASCII art.
-
-2. Run the program with the following command:
+1. Run the program with the following command:
 
     ```sh
     go run . 
     ```
-3. Open your browser and on a new tab, go to ```localhost:8080 ```
-4. Input your text, choose your preferred style of display(banner) and then submit by pressing the generate ascii art button
+2. Open your browser and on a new tab, go to ```http://localhost:8080 ```
+3. Input your text, choose your preferred style of display(banner) and then submit by pressing the generate ascii art button
 
 ## Optional ASCII Art Styles
 
@@ -104,50 +102,43 @@ ASCII Art Output supports multiple ASCII art styles, including:
 
 ## Expected Output
 
+Input Text: Hello
+
 Instance 1. shadow 
 ```
-                                       
-_|_|_|_| _|                     _|     
-_|          _|  _|_|   _|_|_| _|_|_|_| 
-_|_|_|   _| _|_|     _|_|       _|     
-_|       _| _|           _|_|   _|     
-_|       _| _|       _|_|_|       _|_| 
-                                       
-                                       
-                                      
-_|_|_|_|_|                     _|     
-    _|       _|_|     _|_|_| _|_|_|_| 
-    _|     _|_|_|_| _|_|       _|     
-    _|     _|           _|_|   _|     
-    _|       _|_|_| _|_|_|       _|_| 
+ _    _          _   _          
+| |  | |        | | | |         
+| |__| |   ___  | | | |   ___   
+|  __  |  / _ \ | | | |  / _ \  
+| |  | | |  __/ | | | | | (_) | 
+|_|  |_|  \___| |_| |_|  \___/  
+                                
                                       
 ```                                   
 
 Instance 2. thinktertoy
 ```
-
-                                    o o         | |               
-  0    --  o-o            o         | |  | |   -O-O-      O   o   
- /|   o  o    |            \            -O-O- o | |   o  /   / \  
-o |     /   oo              O            | |   -O-O-    /   o O-o 
-  |    /      |       o-o  /            -O-O-   | | o  /  o  \    
-o-o-o o--o o-o            o              | |   -O-O-  O       o-  
-                                                | |               
-                                                                
+                              
+_|    _|          _| _|          
+_|    _|   _|_|   _| _|   _|_|   
+_|_|_|_| _|_|_|_| _| _| _|    _| 
+_|    _| _|       _| _| _|    _| 
+_|    _|   _|_|_| _| _|   _|_|   
+                                 
+                                 
 
 ```
 
 Instance 3. standard
 
 ```
-                                   __             _  _      _     _   __ 
- _   ____    _____                 \ \          _| || |_   | |   (_) / / 
-/ | |___ \  |___ /         ______   \ \        |_  __  _| / __)     / /  
-| |   __) |   |_ \        |______|   > >        _| || |_  \__ \    / /   
-| |  / __/   ___) |                 / /        |_  __  _| (   /   / / _  
-|_| |_____| |____/                 /_/           |_||_|    |_|   /_/ (_) 
-                                                                         
-                                                                        
+                 
+o  o     o o     
+|  |     | |     
+O--O o-o | | o-o 
+|  | |-' | | | | 
+o  o o-o o o o-o 
+                                                                                  
 
 ```
 ## Roadmap
